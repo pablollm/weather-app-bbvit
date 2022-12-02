@@ -7,29 +7,13 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import favoriteCard from "../favoriteCard/favoriteCard";
+
 
 const WeatherGrid = ({data, removeCity}) => {
 
 
   return (
-/*
-    <div>
-      <ul>
-      {data && data.map((item,index) => 
-        
-        <section key={index}>
-        <p>{item.name}</p>
-        <p>{Math.round(item.main.temp)}°C</p>
-        </section>
-        
-      
-      )}
-      </ul>
-    
-    
-    </div>
-*/
+
     <>
       <label className="title">Favorites</label>
       <Accordion allowZeroExpanded>

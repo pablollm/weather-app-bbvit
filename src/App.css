@@ -1,7 +1,20 @@
 .container{
   max-width: 1080px;
   margin: 0 auto;
-    background: radial-gradient(circle at 50% 120%, #00B2E9 0%, #004380 75%);
-    height: 100vh;
+  background: radial-gradient(circle at 50% 120%, #00B2E9 0%, #004380 75%);
+}
+.current-weather{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.btn-add-favorite{
+    width: 300px;
+    border-radius: 0 0 6px 6px;
+    background-color: #0d2242;
+    color: yellow;
+    border: none;
+    padding: 10px;
 }

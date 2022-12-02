@@ -48,6 +48,9 @@
   grid-template-columns: auto auto;
   padding: 5px 15px;
   row-gap: 0;
+  background: white;
+  margin: 0px 5px 10px 5px;
+  border-radius: 15px;
 }
 
 .daily-details-grid-item {
