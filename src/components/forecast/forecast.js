@@ -9,7 +9,7 @@ import {
 } from "react-accessible-accordion";
 import "./forecast.css";
 
-const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const WEEK_DAYS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
 
 const Forecast = ({ data }) => {
   const dayInAWeek = new Date().getDay();
