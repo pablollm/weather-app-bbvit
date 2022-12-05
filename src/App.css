@@ -1,3 +1,7 @@
+html{
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
 .container{
   width: 100%;
   margin: 0 auto;
@@ -9,6 +13,7 @@
   justify-content: flex-end;
   align-self: center;
   background: #004380;
+  padding: 10px;
 
 }
 .current-weather{
