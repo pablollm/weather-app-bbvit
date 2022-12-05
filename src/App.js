@@ -3,6 +3,7 @@ import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
 import WeatherGrid from "./components/weather-grid/weatherGrid";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import "./App.css";
 
@@ -176,7 +177,7 @@ function App() {
       {currentWeather &&
       <section className="current-weather">
        <CurrentWeather weather={currentWeather} />
-       <button className="btn-add-favorite" onClick={() => onSaveCity(currentWeather.id)}>Save</button>
+       <button className="btn-add-favorite" onClick={() => onSaveCity(currentWeather.id)}>Añadir a favoritos <FavoriteBorderIcon className="fav-icon"/> </button>
       </section>
       }
       {forecast && 

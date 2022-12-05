@@ -19,7 +19,18 @@
     width: 300px;
     border-radius: 0 0 6px 6px;
     background-color: #0d2242;
-    color: yellow;
+    color:#FFD10F; 
     border: none;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fav-icon{
+  color:red;
+  margin-left: 10px;
+}
+.unfav-icon{
+color:#0d2242;
+margin-left: 10px;
 }
