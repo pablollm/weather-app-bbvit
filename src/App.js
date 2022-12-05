@@ -16,11 +16,6 @@ function App() {
   const [savedCityIds, setSavedCityIds] = useState([]);
   const [citiesData, setCitiesData] = useState([]);
   const [fetchingCities, setFetchingCities] = useState(true);
-
-
-  
-
-  
     useEffect(() => {
  
     const fetchData = async () => {
@@ -63,10 +58,8 @@ function App() {
 
 
   const handleOnSearchChange = (searchData) => {
-    console.log("searchData",searchData);
     setCurrentWeather(null);
     const [lat, lon] = searchData.value.split(" ")
-    console.log(lat,lon);
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric&lang=sp`
     );

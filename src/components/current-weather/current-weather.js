@@ -15,8 +15,7 @@ const CurrentWeather = ({weather}) => {
         <img
           alt="weather"
           className="weather-icon"
-         // src={`icons/${icon}.png`}
-       src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+          src={`icons/${weather.weather[0].icon}.png`}
         />
       </div>
       <div className="current-weather-footer">
