@@ -22,22 +22,37 @@ function App() {
 
   
     useEffect(() => {
-     navigator.geolocation.getCurrentPosition(function(position) {
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
-        var aux = {
-          value: position.coords.latitude + '' + position.coords.longitude
-        }
-    });
+ 
     const fetchData = async () => {
+      var aux;
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
-         var aux = {
+          aux = {
           value: position.coords.latitude + ' ' + position.coords.longitude
         }
-       // handleOnSearchChange(aux);
         
+       const  initialWeatherLocation =(aux) => {
+          
+        const [lat, lon] = aux.value.split(" ")
+        const currentWeatherFetch = fetch(
+          `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric&lang=sp`
+        );
+        const forecastFetch = fetch(
+          `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric&lang=sp`
+        );
+
+        Promise.all([currentWeatherFetch, forecastFetch])
+      .then(async (response) => {
+        const weatherResponse = await response[0].json();
+        const forcastResponse = await response[1].json();
+
+        setCurrentWeather({ city: aux.label, ...weatherResponse });
+        setForecast({ city: aux.label, ...forcastResponse });
+      })
+      .catch((err) =>console.log(err));
+       }
+        initialWeatherLocation(aux);
       });
 
 
@@ -49,6 +64,7 @@ function App() {
 
   const handleOnSearchChange = (searchData) => {
     console.log("searchData",searchData);
+    setCurrentWeather(null);
     const [lat, lon] = searchData.value.split(" ")
     console.log(lat,lon);
     const currentWeatherFetch = fetch(
@@ -136,9 +152,13 @@ function App() {
        <button className="btn-add-favorite" onClick={() => onSaveCity(currentWeather.id)}>Save</button>
       </section>
       }
-      {forecast && <Forecast data={forecast} />}
+      {forecast && 
+      <section className="forecast">
+      <Forecast data={forecast} />
+      </section>
+      }
       {citiesData && 
-      <section className="">
+      <section className="favorites">
       <WeatherGrid data={citiesData} removeCity={removeCity}/>
       </section>
       }

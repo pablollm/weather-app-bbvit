@@ -1,7 +1,8 @@
 .container{
-  max-width: 1080px;
+  width: 100%;
   margin: 0 auto;
-  background: radial-gradient(circle at 50% 120%, #00B2E9 0%, #004380 75%);
+  background: #004380;
+    height: 100vh;
 }
 .current-weather{
   display: flex;
@@ -9,7 +10,11 @@
     justify-content: center;
     align-items: center;
 }
-
+.forecast,.favorites{
+    background: #004380;
+    padding: 20px;
+    box-sizing: border-box;
+}
 .btn-add-favorite{
     width: 300px;
     border-radius: 0 0 6px 6px;

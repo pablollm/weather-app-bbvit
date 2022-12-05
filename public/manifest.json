@@ -1,8 +1,10 @@
 {
-  "short_name": "Weather App",
-  "name": "Weather app by pablo lleonart",
-  "description": "App  to show the weather information",
+  "background_color": "#ffffff",
   "categories": ["weather"],
+  "description": "Esta es una PWA del tiempo para una prueba bbvit",
+  "dir": "ltr",
+  "display_override": ["standalone", "fullscreen"],
+  "display": "standalone",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,22 +12,31 @@
       "type": "image/x-icon"
     },
     {
+      "src": "images/logo.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
+
     }
   ],
-  "start_url": ".",
-  "display-override": ["standalone","fullscreen"],
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#002A60",
+  "lang": "es",
+  "name": "PWA weather bbvit",
   "orientation": "portrait",
-  "scope":"/"
-
+  "prefer_related_application": false,
+  "scope": "/",
+  "short_name": "weather-bbvit",
+  "start_url": ".",
+  "theme_color": "#000000"
 }
