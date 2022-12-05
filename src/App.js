@@ -13,24 +13,22 @@ function App() {
   const [forecast, setForecast] = useState(null);
   const [latitude, setLat] = useState(null);
   const [longitude, setLong] = useState(null);
-  const [datax, setDatax] = useState(null);
-  const [weather, setWeather] = useState(null);
   const [savedCityIds, setSavedCityIds] = useState([]);
   const [citiesData, setCitiesData] = useState([]);
-  const [message, setMessage] = useState(null);
   const [fetchingCities, setFetchingCities] = useState(true);
 
-      navigator.geolocation.getCurrentPosition(function(position) {
+
+  
+
+  
+    useEffect(() => {
+     navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
         var aux = {
           value: position.coords.latitude + '' + position.coords.longitude
         }
-      });
-  
-
-  
-    useEffect(() => {
+    });
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude);
@@ -38,7 +36,7 @@ function App() {
          var aux = {
           value: position.coords.latitude + ' ' + position.coords.longitude
         }
-        handleOnSearchChange(aux);
+       // handleOnSearchChange(aux);
         
       });
 
@@ -75,7 +73,6 @@ function App() {
   const fetchSavedCities  = async () =>{
     const cityStorage = localStorage.getItem("cityStorage"); 
     const queryArr = cityStorage ? JSON.parse(cityStorage) : []; 
-    let dataux;
     if (queryArr.length) {
       const list = queryArr.join(",")
 
@@ -126,8 +123,7 @@ function App() {
 
     const updatedCities = citiesData.filter(city => city.id !== id); 
     setCitiesData(updatedCities); 
-    setMessage({ type: "success", message: "Successfully removed city." });
-    return setInterval(() => setMessage(null), 5000);
+    return setInterval(() => 5000);
   };
 
 
@@ -141,7 +137,11 @@ function App() {
       </section>
       }
       {forecast && <Forecast data={forecast} />}
-      {citiesData && <WeatherGrid data={citiesData} removeCity={removeCity}/> }
+      {citiesData && 
+      <section className="">
+      <WeatherGrid data={citiesData} removeCity={removeCity}/>
+      </section>
+      }
     </main>    
   );
 }

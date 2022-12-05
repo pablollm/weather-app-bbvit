@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -15,7 +15,6 @@ const WeatherGrid = ({data, removeCity}) => {
   return (
 
     <>
-      <label className="title">Favorites</label>
       <Accordion allowZeroExpanded>
         {data.map((item, idx) => (
           <AccordionItem key={idx}>
@@ -23,7 +22,7 @@ const WeatherGrid = ({data, removeCity}) => {
               <AccordionItemButton>
                 <div className="daily-item">
                   <label>{item.name}</label>
-                  <img src={`icons/${item.weather[0].icon}.png`} className="icon-small" alt="weather" />
+                  <img src={`https://openweathermap.org/img/w/${item.weather[0].icon}.png`} className="icon-small" alt="weather" />
                   <label className="description">{item.weather[0].description}</label>
                   <label className="min-max">{Math.round(item.main.temp_max)}°C /{Math.round(item.main.temp_min)}°C</label>
                   <button onClick={() => removeCity(item.id)}>Delete</button>

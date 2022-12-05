@@ -1,7 +1,6 @@
 
 import "./current-weather.css";
-import { WEATHER_API_KEY,WEATHER_API_URL } from "../../api";
-import React, { useState } from "react";
+import React  from "react";
 
 const CurrentWeather = ({weather}) => {
 
@@ -16,7 +15,8 @@ const CurrentWeather = ({weather}) => {
         <img
           alt="weather"
           className="weather-icon"
-          src={`icons/${weather.weather[0].icon}.png`}
+         // src={`icons/${icon}.png`}
+       src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
         />
       </div>
       <div className="current-weather-footer">

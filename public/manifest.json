@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Weather App",
+  "name": "Weather app by pablo lleonart",
+  "description": "App  to show the weather information",
+  "categories": ["weather"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +21,11 @@
     }
   ],
   "start_url": ".",
+  "display-override": ["standalone","fullscreen"],
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#002A60",
+  "orientation": "portrait",
+  "scope":"/"
+
 }
