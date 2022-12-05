@@ -167,9 +167,9 @@ function App() {
 
   return (
     <>
-     <header>
+     <header className="header">
         {isReadyForInstall && (
-          <button onClick={downloadApp}> Descargasdasda </button>
+          <button onClick={downloadApp}> Descargar </button>
         )}
     </header>
     <main className='container'>

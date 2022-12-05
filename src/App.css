@@ -2,7 +2,14 @@
   width: 100%;
   margin: 0 auto;
   background: #004380;
-    height: 100vh;
+  height: 100vh;
+}
+.header{
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  background: #004380;
+
 }
 .current-weather{
   display: flex;
